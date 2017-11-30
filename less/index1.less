@@ -1,0 +1,584 @@
+@import "loading";
+@import "swiper";
+@import "common";
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+html{
+  font-size: 100px;
+}
+
+.content{
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+  height: 100%;
+  background: #f3f3f3;
+  .music-img{
+    position: absolute;
+    z-index: 999;
+    top:.5rem;
+    right: .1rem;
+    width: .5rem;
+    height: .5rem;
+    background-color: #cccccc;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: .5rem;
+    &.move{
+      animation: bounceCricle 2s linear infinite;
+    }
+    i{
+      font-size: .2rem;
+      color: lightseagreen;
+    }
+  }
+}
+main{
+  height: 100%;
+  width: 100%;
+  font-size: .24rem;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f3f3f3;
+}
+.swiper-container{
+  height: 100%;
+}
+.title{
+  position: relative;
+  z-index: 2;
+  height: .4rem;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  border-left: .01rem solid #f6f6f6;
+  border-right: .01rem solid #f6f6f6;
+
+  h1{
+    height:100%;
+    line-height: .4rem;
+    font-size: .24rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.page1{
+  position: relative;
+  left: -100%;
+}
+#page1{
+  left: 0;
+  background: #fff;
+  .top{
+    position: relative;
+    top:-.2rem;
+    width: 100%;
+    height: 2.92rem;
+    overflow: hidden;
+    animation: bounceInDown 1s;
+
+    li{
+      position: absolute;
+      top:-.2rem;
+      &:nth-of-type(1){
+        left: .4rem;
+      }
+      &:nth-of-type(2){
+        left: 50%;
+        margin-left: -.6rem;
+        height: 2.88rem;
+        width: 1.2rem;
+        img{
+          position: absolute;
+          top:0;
+          left: 0;
+        }
+        .middle-img{
+          opacity: 0;
+          .animation(@name: fadeIn,@duration: .6s,@count: infinite);
+          /*-webkit-animation: fadeIn .6s 1s infinite;
+          animation: fadeIn .6s 1s infinite;*/
+        }
+      }
+      &:nth-of-type(3){
+        right: .4rem;
+      }
+    }
+  }
+
+  .mjl{
+    position: relative;
+    top: .1rem;
+    text-align: center;
+    opacity: 0;
+    .animation(@name:bounceInUp,@delay: 1s);
+    /*-webkit-animation: bounceInUp 1s 1s;
+    animation: bounceInUp 1s 1s;*/
+  }
+
+  .footer{
+    position: relative;
+    text-align: center;
+    top: .6rem;
+    opacity: 0;
+    //.animation(@name:bounceInUp,@delay: 1.5s );
+    -webkit-animation: bounceInUp 1s 1.5s both;
+    animation: bounceInUp 1s 1.5s both;
+    li{
+      display: inline-block;
+      height: 1rem;
+      font-size: .14rem;
+      padding: 0.072rem .15rem;
+      p{
+        height: .24rem;
+        padding-top:.1rem;
+      }
+
+      span{
+        font-size: .24rem;
+      }
+    }
+  }
+}
+.page2{
+  position: relative;
+  left: -200%;
+}
+#page2{
+  left: 0;
+  background: #fff;
+  ul{
+    position: relative;
+    height: 100%;
+    li{
+      position: absolute;
+    }
+    .left1{
+      opacity: 0;
+      top:1.16rem;
+      width: .3rem;
+      height: .15rem;
+      animation: bounceInLeft 1s both;
+    }
+    .left2{
+      opacity: 0;
+      left: .2rem;
+      height: 100%;
+      -webkit-animation: bounceInLeft 1s both;
+      animation: bounceInLeft 1s  both;
+     div{
+       position: relative;
+       height: 100%;
+       img{
+         height: 6.67rem;
+
+       }
+       .img1{
+         position: absolute;
+         top:.9rem;
+         width: .85rem;
+         height: .85rem;
+         left: .1rem;
+        animation: bounceCricle 2s linear infinite;
+       }
+       .img2{
+         position: absolute;
+         width: .34rem;
+         height: .54rem;
+         top:1.05rem;
+         left: .35rem;
+       }
+     }
+    }
+    .left3{
+      right: -.7rem;
+      top:.9rem;
+      opacity: 0;
+      animation: bounceInRight 1s 1s both;
+      img{
+        width: 2.85rem;
+        animation: bounceCricle 2s linear ;
+      }
+      .name{
+        height: .3rem;
+        width: 2.85rem;
+        line-height: .3rem;
+        margin-top: -.4rem;
+        margin-left: .2rem;
+      }
+    }
+  }
+  .myInfo{
+    bottom: 1.3rem;
+    height: 3.5rem;
+    right: 0;
+    animation: bounceInRight 1s 1.5s both;
+    div{
+      position: relative;
+      height: 100%;
+      .my1{
+        position: absolute;
+        top:.2rem;
+        right: .7rem;
+        animation: jello 1s 3s;
+
+      }
+      .my2{
+        position: absolute;
+        top:.3rem;
+        right: .8rem;
+        width: 1.23rem;
+        height: 1.34rem;
+        opacity: 0;
+        animation: jello 1s 3s both;
+      }
+      .info{
+        position: absolute;
+        top: 2rem;
+        right: .3rem;
+        width: 2rem;
+        line-height: .3rem;
+        font-size: .18rem;
+        color: #555555;
+        animation: bounceInRight 1s 2s both;
+      }
+      .foot{
+        opacity: 0;
+        position: absolute;
+        bottom: .1rem;
+        animation: fadeInRight 1s 1s both;
+      }
+    }
+  }
+}
+.page3{
+  position: relative;
+  left: -300%;
+}
+#page3{
+  left: 0;
+  background: #fff;
+  ul{
+    position: relative;
+    height: 100%;
+    .page-item{
+      position: absolute;
+    }
+    .left1{
+
+      top:1.16rem;
+      width: .3rem;
+      height: .15rem;
+      animation: bounceInLeft 1s;
+    }
+    .left2{
+      left: .2rem;
+      height: 100%;
+      opacity: 0;
+      -webkit-animation: bounceInLeft 1s both;
+      animation: bounceInLeft 1s both;
+      div{
+        position: relative;
+        height: 100%;
+        img{
+          height: 6.67rem;
+        }
+        .img1{
+          position: absolute;
+          top:.9rem;
+          width: .85rem;
+          height: .85rem;
+          left: .1rem;
+          animation: bounceCricle 2s linear infinite;
+        }
+        .img2{
+          position: absolute;
+          width: .34rem;
+          height: .54rem;
+          top:1.05rem;
+          left: .35rem;
+        }
+      }
+    }
+    .left3{
+      right: -.7rem;
+      top:.9rem;
+      animation: bounceInRight 1s 1s both;
+      img{
+        width: 2.85rem;
+      }
+      .name{
+        height: .3rem;
+        width: 2.85rem;
+        line-height: .3rem;
+        margin-top: -.4rem;
+        margin-left: .2rem;
+      }
+    }
+    .myInfo{
+      font-size: .16rem;
+      color: #555;
+      top:1.7rem;
+      bottom: .8rem;
+      height: 3.5rem;
+      right: 0;
+      left: 1rem;
+      .myInfo-top{
+        opacity: 0;
+        padding: .1rem .1rem 0;
+        height: 1.8rem;
+        animation: fadeInLeft 1s 2s both;
+        li{
+          height: .3rem;
+          line-height: .3rem;
+        }
+      }
+      .myInfo-bottom{
+        padding: .1rem .1rem 0;
+        height: 1.2rem;
+        animation: fadeInLeft 1s 2.5s both;
+        li{
+          height: .4rem;
+          line-height: .4rem;
+
+          img{
+            display: inline-block;
+            vertical-align: middle;
+          }
+          span{
+            display: inline-block;
+            padding-left: .1rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .foot{
+      opacity: 0;
+      position: absolute;
+      bottom: .6rem;
+      animation: fadeInRight 1s 1s both;
+    }
+  }
+
+}
+.page4{
+  position: relative;
+  left: -400%;
+}
+#page4{
+  left: 0;
+  background: #fff;
+  ul{
+    position: relative;
+    height: 100%;
+    .page-item{
+      position: absolute;
+    }
+    .left1{
+      top:1.16rem;
+      width: .3rem;
+      height: .15rem;
+      animation: bounceInLeft .3s;
+    }
+    .left2{
+      left: .2rem;
+      height: 100%;
+      opacity: 0;
+      -webkit-animation: bounceInLeft 1s both;
+      animation: bounceInLeft 1s both;
+      div{
+        position: relative;
+        height: 100%;
+        img{
+          height: 6.67rem;
+        }
+        .img1{
+          position: absolute;
+          top:.9rem;
+          width: .85rem;
+          height: .85rem;
+          left: .1rem;
+          animation: bounceCricle 1.5s linear infinite;
+        }
+        .img2{
+          position: absolute;
+          width: .34rem;
+          height: .54rem;
+          top:1.05rem;
+          left: .35rem;
+        }
+      }
+    }
+    .left3{
+      right: -.7rem;
+      top:.9rem;
+      animation: bounceInRight 1s 1.5s both;
+      img{
+        width: 2.85rem;
+      }
+      .name{
+        height: .3rem;
+        width: 2.85rem;
+        line-height: .3rem;
+        margin-top: -.4rem;
+        margin-left: .2rem;
+      }
+    }
+    .myInfo{
+      font-size: .16rem;
+      color: #555;
+      top:1.7rem;
+      bottom: .8rem;
+      height: 3.5rem;
+      right: 0;
+      left: 1rem;
+
+      .process{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        h2{
+          opacity: 0;
+          animation: shake 1s 1.5s both;
+        }
+        .process-item{
+          i{
+            color: lightgreen;
+            background-color: #fff;
+          }
+          height: .7rem;
+          width: 100%;
+          &:nth-of-type(1){
+            animation: fadeInRight 1s 2s both;
+          }
+          &:nth-of-type(2){
+            animation: fadeInRight 1s 3s both;
+          }
+          &:nth-of-type(3){
+            animation: fadeInRight 1s 4s both;
+          }
+          &:nth-of-type(4){
+            animation: fadeInRight 1s 5s both;
+          }
+        }
+      }
+
+      .myInfo-top{
+        padding: .1rem .1rem 0;
+        height: 1.8rem;
+        li{
+          height: .3rem;
+          line-height: .3rem;
+        }
+      }
+      .myInfo-bottom{
+        padding: .1rem .1rem 0;
+        height: 1.2rem;
+        li{
+          height: .4rem;
+          line-height: .4rem;
+
+          img{
+            display: inline-block;
+            vertical-align: middle;
+          }
+          span{
+            display: inline-block;
+            padding-left: .1rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .foot{
+      opacity: 0;
+      position: absolute;
+      bottom: .6rem;
+      animation: fadeInRight 1s 1s both;
+    }
+  }
+
+}
+.page5{
+  overflow: hidden;
+  position: relative;
+  left: -501%;
+}
+#page5{
+  left: 0;
+  background: #fff;
+.page5-img{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  img{
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    animation: zoomInRight 1s both;
+  }
+  p{
+    opacity: 0;
+    font-size: .18rem;
+    text-align: center;
+    animation: zoomInRight 1s 1s both;
+  }
+}
+}
+.pre-wrap-bottom{
+  position: absolute;
+  width: .24rem;
+  height: .14rem;
+  left: 50%;
+  margin-left: -.12rem;
+  bottom: 10%;
+  animation: topdown 1s infinite;
+  .pre-box2{
+    left: .1rem;
+  }
+  .pre-box1,.pre-box2{
+    height: .15rem;
+    width: .11rem;
+    position: absolute;
+    top:-.05rem;
+    overflow: hidden;
+
+    .pre1,.pre2{
+      position: absolute;
+      top:.05rem;
+      width: .14rem;
+      height: .05rem;
+      box-shadow: .01rem -.01rem .01rem #646464;
+      border-radius: .02rem;
+    }
+    .pre1{
+      left: .01rem;
+      -webkit-transform: rotate(130deg);
+      transform: rotate(130deg);
+    }
+    .pre2 {
+      left: -.045rem;
+      -webkit-transform: rotate(50deg);
+      transform: rotate(50deg);
+
+    }
+  }
+}
+.swiper-container-horizontal{
+  .swiper-pagination-progress{
+    position: fixed;
+    width: 100%;
+    height: 1%;
+    left: 0;
+    top:99%;
+  }
+}
